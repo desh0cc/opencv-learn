@@ -10,3 +10,13 @@
 
 1. "Matrix" glitch effect on face > <a href="/projects/face-glitch.py">code</a> 
 2. Blocky face > <a href="/projects/blockface.py">code</a>
+
+## Usage
+
+```bash
+git clone https://github.com/desh0cc/opencv-learn.git
+```
+
+```python
+uv sync
+```
