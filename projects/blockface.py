@@ -39,21 +39,23 @@ with FaceLand.create_from_options(options) as landmarker:
         if detections:
             values = detections[0].bounding_box
 
+            area = int(min(height*0.15,width*0.15))
+
             points = [
-                (int(values.origin_x),int(values.origin_y)),
-                (int(values.origin_x+values.width),int(values.origin_y+values.height))
+                (int(values.origin_x-area),int(values.origin_y-area)),
+                (int(values.origin_x+values.width+area),int(values.origin_y+values.height+area))
             ]
 
             face_reg = frame[
-                points[0][0]:points[1][0],
-                points[0][1]:points[1][1]
+                points[0][1]:points[1][1],
+                points[0][0]:points[1][0]
             ]
             
             debug = 1
 
-            k = int(math.sqrt(min(face_reg.shape[0], face_reg.shape[1])))
-
             h, w, _ = face_reg.shape
+
+            k = int(max(h*0.3,w*0.3))
 
             for y in range(0, h, k):
                 for x in range(0, w, k):
