@@ -12,8 +12,7 @@ VisionRunningMode = vision.RunningMode
 
 options = FaceLandOptions(
         base_options=BaseOptions(model_asset_path='models/face_detection.tflite'),
-        running_mode=VisionRunningMode.IMAGE,
-
+        running_mode=VisionRunningMode.IMAGE
     )
 with FaceLand.create_from_options(options) as landmarker:
     cap = cv.VideoCapture(10)
@@ -40,6 +39,14 @@ with FaceLand.create_from_options(options) as landmarker:
             values = detections[0].bounding_box
 
             starting_point = (int(values.origin_x),int(values.origin_y))
+
+            cv.rectangle(
+                frame,
+                starting_point,
+                (starting_point[0]+values.width, starting_point[1]+values.height),
+                (255,255,255),
+                -1
+            )
 
             for _ in range(10):
 
