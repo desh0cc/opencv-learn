@@ -10,6 +10,8 @@
 
 1. "Matrix" glitch effect on face > <a href="/projects/face-glitch.py">code</a> 
 2. Blocky face > <a href="/projects/blockface.py">code</a>
+3. Ascii face > <a href="/projects/ascii-face.py">code</a>
+3. Hand volume control > <a href="/projects/volume-ctrl.py">code</a>
 
 ## Usage
 
