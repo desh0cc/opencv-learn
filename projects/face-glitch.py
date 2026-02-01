@@ -3,7 +3,6 @@ import cv2 as cv
 import mediapipe as mp
 
 from mediapipe.tasks.python import vision
-from mediapipe.tasks.python.vision import FaceLandmarkerResult
 
 BaseOptions = mp.tasks.BaseOptions
 FaceLand = vision.FaceDetector
@@ -11,9 +10,9 @@ FaceLandOptions = vision.FaceDetectorOptions
 VisionRunningMode = vision.RunningMode
 
 options = FaceLandOptions(
-        base_options=BaseOptions(model_asset_path='models/face_detection.tflite'),
-        running_mode=VisionRunningMode.IMAGE
-    )
+    base_options=BaseOptions(model_asset_path='models/face_detection.tflite'),
+    running_mode=VisionRunningMode.IMAGE
+)
 with FaceLand.create_from_options(options) as landmarker:
     cap = cv.VideoCapture(10)
 

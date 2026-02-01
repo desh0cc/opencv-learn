@@ -1,11 +1,8 @@
 import mediapipe as mp
-from mediapipe.tasks import python
-from mediapipe.tasks.python import vision
-
 import cv2 as cv
-import numpy as np
-
 import pyvolume
+
+from mediapipe.tasks.python import vision
 
 BaseOptions = mp.tasks.BaseOptions
 HandLandmarker = vision.HandLandmarker

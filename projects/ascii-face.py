@@ -1,13 +1,8 @@
-import math
 import cv2 as cv
 import mediapipe as mp
 import numpy as np
 
-
 from mediapipe.tasks.python import vision
-from mediapipe.tasks.python.vision import FaceLandmarkerResult
-
-ASCII_CHARS = "@%#*+=-:. "
 
 BaseOptions = mp.tasks.BaseOptions
 FaceLand = vision.FaceDetector
@@ -15,9 +10,9 @@ FaceLandOptions = vision.FaceDetectorOptions
 VisionRunningMode = vision.RunningMode
 
 options = FaceLandOptions(
-        base_options=BaseOptions(model_asset_path='models/face_detection.tflite'),
-        running_mode=VisionRunningMode.IMAGE
-    )
+    base_options=BaseOptions(model_asset_path='models/face_detection.tflite'),
+    running_mode=VisionRunningMode.IMAGE
+)
 
 ASCII_CHARS = r'$@B%8&WM#*/\|()1{}[]?-_+~<>i!lI;:,"^`'
 
