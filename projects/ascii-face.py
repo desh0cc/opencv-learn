@@ -51,7 +51,7 @@ def convert_to_ascii_art(frame: np.ndarray, scale: int=8) -> np.ndarray:
         return frame
     
 with FaceLand.create_from_options(options) as landmarker:
-    cap = cv.VideoCapture(10)
+    cap = cv.VideoCapture(0)
 
     cap.set(cv.CAP_PROP_FRAME_WIDTH, 800)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, 600)
@@ -67,11 +67,7 @@ with FaceLand.create_from_options(options) as landmarker:
         mp_image = mp.Image(mp.ImageFormat.SRGB,frame)
         annotated = landmarker.detect(mp_image)
 
-        debug = 1
-
         detections = [d_obj for d_obj in annotated.detections]
-
-        # frame = convert_to_ascii_art(frame)
 
         if detections:
             values = detections[0].bounding_box
