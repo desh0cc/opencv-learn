@@ -16,10 +16,20 @@
 
 ## Usage
 
+If the project doesn’t run, ensure it’s using the correct camera ID
+
 ```bash
 git clone https://github.com/desh0cc/opencv-learn.git
 ```
 
 ```python
 uv sync
+```
+
+```bash
+source .venv/bin/activate
+```
+
+```python
+python projects/<file> 
 ```
